@@ -18,3 +18,5 @@ authRouter.post('/sign-up', (req, res)=>{
         title : 'Sign-Up'
     })
 });
+
+export default authRouter
