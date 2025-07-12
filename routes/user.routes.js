@@ -1,19 +1,11 @@
 import {Router} from 'express'
-
+import {allUsers, userwithid} from '../controllers/user.controller.js'
 const userRouter = Router();
 
-userRouter.get('/', (req, res)=>{
-    res.send({
-        title : 'GET all users'
-    })
-});
+userRouter.get('/', allUsers);
 
 
-userRouter.get('/:id', (req, res)=>{
-    res.send({
-        title : 'GET user details'
-    })
-});
+userRouter.get('/:id', userwithid);
 
 userRouter.post('/', (req, res) =>{
     res.send({

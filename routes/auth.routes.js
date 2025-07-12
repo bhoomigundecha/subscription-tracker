@@ -10,10 +10,6 @@ authRouter.post('/sign-out', (req, res)=>{
     })
 });
 
-authRouter.post('/sign-in', (req, res)=>{
-    res.send({
-        title : 'Sign-in'
-    })
-});
+authRouter.post('/sign-in', signIn);
 
 export default authRouter
