@@ -2,7 +2,7 @@ import { Router } from 'express';
 const authRouter = Router();
 import { signUp, signOut, signIn } from "../controllers/auth.controller.js"
 
-authRouter.post('/sign-in', signIn);
+authRouter.post('/sign-up', signUp);
 
 authRouter.post('/sign-out', (req, res)=>{
     res.send({
@@ -10,9 +10,9 @@ authRouter.post('/sign-out', (req, res)=>{
     })
 });
 
-authRouter.post('/sign-up', (req, res)=>{
+authRouter.post('/sign-in', (req, res)=>{
     res.send({
-        title : 'Sign-Up'
+        title : 'Sign-in'
     })
 });
 
