@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import authorize from '../middlewares/auth.middleware.js';
+import { createSubscription } from '../controllers/subscription.controller.js';
 
 const subscriptionRouter = Router();
 
@@ -15,11 +17,7 @@ subscriptionRouter.post("/:id", (req,res)=>{
 });
 
 
-subscriptionRouter.post("/", (req,res)=>{
-    res.send({
-        title : 'CREATE all subscriptions'
-    })
-});
+subscriptionRouter.post("/", authorize, createSubscription);
 
 subscriptionRouter.put("/", (req,res)=>{
     res.send({
