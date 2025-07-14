@@ -9,7 +9,7 @@ import authRouter from './routes/auth.routes.js';
 import connectToDatabase from './database/mongodb.js'; 
 import errorMiddleware from './middlewares/error.middleware.js';
 import cookieParser from 'cookie-parser';
-
+import workflowRouter from './routes/workflow.route.js';
 const app = express();
 
 app.use(errorMiddleware)
@@ -23,7 +23,7 @@ app.use('/api/v1/auth', authRouter)
 // api/v1/auth/sign-in
 app.use('/api/v1/subscription', subscriptionRouter)
 app.use('/api/v1/user', userRouter)
-
+app.use('api/v1/workflows', workflowRouter);
 
 
 
